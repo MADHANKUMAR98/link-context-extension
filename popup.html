@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 320px;
+      padding: 0;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      opacity: 0.9;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .status-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .status-active {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #4ade80;
+      font-weight: 600;
+    }
+    .features {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    .feature-icon {
+      width: 16px;
+      text-align: center;
+    }
+    .settings {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #4ade80;
+    }
+    input:checked + .slider:before {
+      transform: translateX(16px);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🔗 Link Context</div>
+      <div class="tagline">Smart link previews & safety analysis</div>
+    </div>
+    
+    <div class="status-card">
+      <div class="status-active">
+        <span>●</span>
+        <span>Extension Active</span>
+      </div>
+    </div>
+    
+    <div class="features">
+      <div class="feature-item">
+        <span class="feature-icon">🔍</span>
+        <span>Smart link analysis on hover</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🛡️</span>
+        <span>Safety scoring & warnings</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🌐</span>
+        <span>Domain information & HTTPS check</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">⚡</span>
+        <span>URL shortener detection</span>
+      </div>
+    </div>
+    
+    <div class="settings">
+      <div class="setting-item">
+        <span>Show security score</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <span>Link shortener warnings</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <span>HTTPS warnings</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="footer">
+      Hover over any link to see the preview
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
